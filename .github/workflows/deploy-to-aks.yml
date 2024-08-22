@@ -39,5 +39,4 @@ jobs:
     - name: Deploy Helm Chart
       run: |
         cd k8s/hello-java
-        helm upgrade --install hello-java . \ 
-        --namespace hello-java
+        helm upgrade --install --namespace hello-java hello-java . -f values.yaml
