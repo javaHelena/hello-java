@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - deploy-to-aks
 
 jobs:
   deploy-to-dev:
