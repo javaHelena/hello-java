@@ -1,0 +1,32 @@
+name: Pull Request Workflow
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  build-and-test-pr:
+    runs-on: ubuntu-latest
+    environment: aks
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Build with Gradle
+        run: ./gradlew clean build --no-daemon --stacktrace
+
+      - name: Build docker image
+        run: docker build -t hello-java .
+
+      - name: Run docker container
+        run: docker run -e HELLO_MESSAGE="Hello from GitHub Actions" -d --name hello-java -p 8080:8080 hello-java
