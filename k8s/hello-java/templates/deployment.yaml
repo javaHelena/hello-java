@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-java
+  namespace: hello
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hello-java
+      app.kubernetes.io/instance: hello-java
+  template:
+    metadata:
+      annotations:
+        helm.sh/revision: "{{ .Release.Revision }}"
+      labels:
+        app.kubernetes.io/name: hello-java
+        app.kubernetes.io/instance: hello-java
+    spec:
+      containers:
+        - name: hello-java
+          image: "aksjavahelena.azurecr.io/hello-java:latest"
+          ports:
+            - containerPort: 8080
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: HELLO_MESSAGE
+              value: "{{ .Values.config.hello.message }}"
+
