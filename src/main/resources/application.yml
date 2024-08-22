@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: hello-java
+management:
+  endpoint:
+    env:
+      enabled: true
+      show-values: always
+      roles: ACTUATOR
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+hello:
+  message: ${HELLO_MESSAGE:Hello from Spring Boot Application Yaml}
