@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: hello-java
-          image: "aksjavahelena.azurecr.io/hello-java:latest"
+          image: "acrjavahelena.azurecr.io/hello/hello-java:latest"
           ports:
             - containerPort: 8080
           resources:
