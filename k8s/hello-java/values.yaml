@@ -1,0 +1,16 @@
+# Default values for hello-java.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+
+config:
+  hello:
+    message: "hello from values yaml file"
