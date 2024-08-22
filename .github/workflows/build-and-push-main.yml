@@ -45,15 +45,15 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ vars.AZURE_REGISTRY_URL }}/hello-java:${{ env.SHORT_SHA }} .
+          docker build -t ${{ vars.AZURE_REGISTRY_URL }}/hello/hello-java:${{ env.SHORT_SHA }} .
 
       - name: Push Docker image to ACR - SHORT SHA
         run: |
-          docker push ${{ vars.AZURE_REGISTRY_URL }}/hello-java:${{ env.SHORT_SHA }}  
+          docker push ${{ vars.AZURE_REGISTRY_URL }}/hello/hello-java:${{ env.SHORT_SHA }}  
 
       - name: Tag and Push Docker image to ACR - LATEST
         run: |
-          docker tag ${{ vars.AZURE_REGISTRY_URL }}/hello-java:${{ env.SHORT_SHA }} ${{ vars.AZURE_REGISTRY_URL }}/hello-java:latest
-          docker push ${{ vars.AZURE_REGISTRY_URL }}/hello-java:latest
+          docker tag ${{ vars.AZURE_REGISTRY_URL }}/hello/hello-java:${{ env.SHORT_SHA }} ${{ vars.AZURE_REGISTRY_URL }}/hello/hello-java:latest
+          docker push ${{ vars.AZURE_REGISTRY_URL }}/hello/hello-java:latest
 
 
