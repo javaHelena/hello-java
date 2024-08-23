@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - pull-policy
+      - deploy-to-aks
 
 jobs:
   deploy-to-dev:
