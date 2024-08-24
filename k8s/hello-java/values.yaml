@@ -18,4 +18,4 @@ image:
 
 config:
   hello:
-    message: "Hello from values yaml file - for argo-fixing!"
+    message: "Hello from values yaml file - lets try syncing"
