@@ -11,6 +11,11 @@ service:
 ingress:
   enabled: true
 
+image:
+  repository: acrjavahelena.azurecr.io/hello/hello-py
+  tag: "latest"
+  pullPolicy: Always
+
 config:
   hello:
     message: "hello from values yaml file"
