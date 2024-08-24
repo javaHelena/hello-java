@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
         - name: hello-java
-          image: "acrjavahelena.azurecr.io/hello/hello-java:latest"
-          imagePullPolicy: IfNotPresent
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
           resources:
