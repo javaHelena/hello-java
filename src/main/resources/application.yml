@@ -11,6 +11,5 @@ management:
     web:
       exposure:
         include: "*"
-
-hello:
-  message: ${HELLO_MESSAGE:Hello from Spring Boot Application Yaml}
+server:
+  port: 8085
