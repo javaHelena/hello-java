@@ -13,4 +13,4 @@ ingress:
 
 config:
   hello:
-    message: "hello from values yaml file"
+    message: "Hello from values yaml file - for argo-fixing!"
