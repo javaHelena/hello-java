@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Value("${HELLO_MESSAGE:Hello World from the javaclass!}")
+    @Value("${HELLO_MESSAGE:Hello World from the javaclass again!}")
     private String message;
 
     @GetMapping("/hello")
