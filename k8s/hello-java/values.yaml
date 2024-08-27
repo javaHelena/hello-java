@@ -12,7 +12,7 @@ ingress:
   enabled: true
 
 image:
-  repository: acrjavahelena.azurecr.io/hello/hello-py
+  repository: acrjavahelena.azurecr.io/hello/hello-java
   tag: "latest"
   pullPolicy: Always
 
