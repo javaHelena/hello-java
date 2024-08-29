@@ -19,4 +19,6 @@ RUN ls -la /app/build/libs/
 # Copy the JAR file from the build directory to the /app/build/llibs directory to a new file.
 RUN cp /app/build/libs/*SNAPSHOT.jar /app/hello-java.jar
 
+EXPOSE 8080
+
 ENTRYPOINT ["java", "-jar", "/app/hello-java.jar"]
